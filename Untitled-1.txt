@@ -1,0 +1,23 @@
+Design:
+To think about later
+
+Languages:
+HTML CSS JAVASCRIPT (maybe react).. backend needed to think about later
+
+features:
+register using included data in the database
+login using included data in the database
+as an admin, 
+    create rooms, modify layout
+    how is layout done: placing computers as squares, square by square in an area where the max capacity is chosen as the maximum scale
+as a user, 
+    choose a place, reserve it until chosen time, can cancel, modify
+    time limit
+a place is declared empty when passed chosen time by the user
+resets every 21h30
+a7mer abyedh azre9 8ame
+
+
+booking id zeda lezemha temchi, ta3ti lkol reservation booking id mte3hom
+3andek el 7a9 trezervi ken mara bark per user
+

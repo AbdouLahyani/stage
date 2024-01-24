@@ -1,0 +1,247 @@
+#container1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    height: 50px;
+}
+
+#container1 img {
+    width: fit-content;
+}
+
+.btn btn-outline-danger {
+    background-color: #DD0031;
+    font-weight: bold;
+    color: #FFFFFF;
+    transition: all 0.2 ease-in-out;
+    border-radius: 5px;
+}
+
+.btn btn-outline-danger:hover {
+    background-color: #FFFFFF;
+    color: #DD0031;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+}
+
+#blur.active {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+#popup {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: 0.5s;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+
+
+}
+
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+#email {
+    margin-bottom: 5px;
+}
+
+.form-box h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #DD0031;
+    position: relative;
+}
+
+.form-box h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #DD0031;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-field {
+    background: #eaeaeaea;
+    margin: 15px 0px 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+#popup .input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+
+.input-field i {
+    margin-left: 10px;
+}
+
+.btn-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+
+}
+
+#closebtn {
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.btn-field input[type="button"] {
+    background-color: #DD0031;
+    font-weight: bold;
+    color: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    transition: all 0.2 ease-in-out;
+    border-radius: 20px;
+    flex-basis: 35%;
+    height: 40px;
+}
+
+.btn-field input[type="button"]:hover {
+    background-color: #FFFFFF;
+    color: #DD0031;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.btn-field input[type="submit"] {
+    background-color: #DD0031;
+    font-weight: bold;
+    color: #FFFFFF;
+    border: 1px solid #D8D8D8;
+    transition: all 0.2 ease-in-out;
+    border-radius: 20px;
+    flex-basis: 35%;
+    height: 40px;
+}
+
+.btn-field input[type="submit"]:hover {
+    background-color: #FFFFFF;
+    color: #DD0031;
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.show {
+    display: block;
+
+}
+
+.hide {
+    display: none;
+}
+
+#swapbutton {
+    all: unset;
+    text-decoration: underline;
+    color: #DD0031;
+    cursor: pointer;
+}
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
