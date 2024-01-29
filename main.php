@@ -11,12 +11,6 @@
 </head>
 
 <body>
-    <div class="content">
-        <img src="https://picsum.photos/300/300/?random" />
-    </div>
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div>
     <div id="blur">
         <div id="container1">
             <img src="https://seekvectorlogo.net/wp-content/uploads/2022/10/linedata-vector-logo-2022.png"
@@ -54,10 +48,6 @@
     <script src="main.js"></script>
     <script src="https://kit.fontawesome.com/ef12284078.js" crossorigin="anonymous"></script>
 </body>
-<script>
-    $(window).on("load", function () {
-        $(".loader-wrapper").fadeOut("slow");
-    });
-</script>
+
 
 </html>

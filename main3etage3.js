@@ -97,6 +97,7 @@ function etage3() {
             radioInput.id = 'car_' + seatid;
             radioInput.type = 'radio';
             radioInput.dataset.state = '1';
+            radioInput.classList.add("radioinput");
 
             var containerDiv = document.createElement('div');
             containerDiv.classList.add('input-container');

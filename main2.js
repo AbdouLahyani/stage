@@ -55,13 +55,13 @@ function etage1() {
     var seatContainerElement = document.body.querySelector(".seatmap");
     seatContainerElement.innerHTML = "";
     for (let i = 0; i < e1r; i++) {
-        var tr = document.createElement("tr");
+        var tr = document.createElement("div");
         tr.classList.add('tr');
         seatContainerElement.appendChild(tr);
         for (let j = 0; j < e1c; j++) {
             var seat = document.createElement("td");
             seat.classList.add('seat');
-            seat.id = numbers(i,j);
+            seat.id = numbers(i, j);
             let seatid = seat.id;
 
             var radioInput = document.createElement('input');
@@ -71,8 +71,8 @@ function etage1() {
             radioInput.id = 'car_' + seatid;
             radioInput.type = 'radio';
             radioInput.dataset.state = '1';
+            radioInput.classList.add("radioinput");
 
-            
 
             var containerDiv = document.createElement('div');
             containerDiv.classList.add('input-container');
@@ -191,6 +191,12 @@ async function topass(e1r, e1c) {
     const total = e1r * e1c;
     console.log(total);
 
+    // Get selected time
+    const selectedTime = document.getElementById('time').value;
+
+    // Get entered duration
+    const enteredDuration = document.getElementById('duration').value;
+
     const seats = document.querySelectorAll(".seat");
 
     let seatid;
@@ -205,9 +211,17 @@ async function topass(e1r, e1c) {
             break;
         }
     }
-
+    
     if (seatid) {
         let v1 = seatid;
+
+        // Prepare data to send to seatreg.php
+        let data = {
+            v1: v1,
+            time: selectedTime,
+            duration: enteredDuration
+        };
+        console.log(data);
 
         let http = new XMLHttpRequest();
         http.open('POST', 'seatreg.php');
@@ -217,14 +231,18 @@ async function topass(e1r, e1c) {
             console.log(this.response);
             alert(this.response);
         }
-        http.send(JSON.stringify({ v1: v1 }));
+        
+        // Convert JavaScript object to JSON string
+        http.send(JSON.stringify(data));
     } else {
         console.log("No checked seat with state '2' found.");
     }
+
     await new Promise(resolve => setTimeout(resolve, 1000));
 
-    location.reload()
+    location.reload();
 }
+
 
 document.getElementById("annulerbtn").addEventListener("click", async function () {
     try {

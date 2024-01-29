@@ -82,10 +82,13 @@
 
 #form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
+    z-index: 2;
+    height: 120vh;
+    width: 100vw;
 }
 
 :root {
@@ -97,12 +100,14 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    z-index: 2;
 }
 
 .radio-tile-group {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: 2;
 }
 
 .input-container {
@@ -110,6 +115,7 @@
     height: 7rem;
     width: 7rem;
     margin: 0.5rem;
+    z-index: 2;
 }
 
 .input-container input {
@@ -121,6 +127,7 @@
     cursor: pointer;
     z-index: 2;
     opacity: 0;
+    z-index: 2;
 }
 
 .input-container .radio-tile {
@@ -132,11 +139,13 @@
     border: 2px solid var(--primary-color);
     border-radius: 8px;
     transition: all 300ms ease;
+    z-index: 2;
 }
 
 .input-container ion-icon {
     color: var(--primary-color);
     font-size: 3rem;
+    z-index: 2;
 }
 
 .input-container label {
@@ -145,21 +154,25 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    z-index: 2;
 }
 
 input:checked+.radio-tile {
     background-color: var(--primary-color);
     box-shadow: 0 0 12px var(--primary-color);
     transform: scale(1.1);
+    z-index: 2;
 }
 
 input:hover+.radio-tile {
     box-shadow: 0 0 12px var(--primary-color);
+    z-index: 2;
 }
 
 input:checked+.radio-tile ion-icon,
 input:checked+.radio-tile label {
     color: #FFFAFA;
+    z-index: 2;
 }
 
 .occupied {
@@ -245,12 +258,12 @@ body.darkmode {
 }
 
 
-.trDiv{
+.tr{
     display: flex !important;
     flex-wrap: wrap !important;
 }
 
-table{
+.seatmap{
     display:flex !important;
     flex-wrap: wrap !important;
     justify-content: center;
@@ -258,7 +271,141 @@ table{
 
 
 @media only screen and (max-width: 600px) {
-    #etagetitle{
+    #etagetitle {
         font-size: 90%;
     }
-  };
+
+    .input-container {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .input-container {
+        width: 3em;
+        height: 3em;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .input-container {
+        width: 1.5em;
+        height: 1.5em;
+    }
+}
+
+
+@media only screen and (max-width: 350px) {
+    .input-container {
+        width: 1.3em; 
+        height: 1.3em; 
+    }
+}
+
+
+
+
+  .loader_bg{
+    position: fixed;
+    z-index: 10;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    border: 0 soild transparent;
+    border-radius: 50%;
+    width: 150px;
+    z-index: 10;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content: '';
+    border: 1em solid #ff5733;
+    border-radius: 50%;
+    width: inherit;
+    z-index: 10;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+
+/* Add the following styles to your existing CSS or customize as needed */
+
+.language-grid {
+    display: flex;
+}
+
+.language-square {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.language-square.darkmode{
+    color: white;    
+}
+
+
+.language-square.lightmode{
+    color: black;    
+}
+
+
+#nav{
+    display: flex;
+    color: #FAEBD7;
+    flex-direction: column;
+    background-color: #171B25;
+    justify-content: center;
+    width: 60vw;
+    height: 120vh;
+    max-width: 350px;
+    align-items: center;
+}
+
+
+#nav.darkmode{
+    color: antiquewhite;
+    background-color: #3f3f3f;
+}
+
+#time{
+    width: 10vw;
+}
+
+#duration{
+    width: 10vw;
+}
